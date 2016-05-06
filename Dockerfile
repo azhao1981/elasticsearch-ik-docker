@@ -12,7 +12,7 @@ RUN curl -O https://download.elastic.co/elasticsearch/release/org/elasticsearch/
 
 ENV ES_IK_VERSION 1.9.2
 
-RUN curl -o elasticsearch-analysis-ik-${ES_IK_VERSION}.zip https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v${ES_IK_VERSION}/elasticsearch-analysis-ik-${ES_IK_VERSION}.zip && \
+RUN curl -o elasticsearch-analysis-ik-${ES_IK_VERSION}.zip -L -e  '; auto' https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v${ES_IK_VERSION}/elasticsearch-analysis-ik-${ES_IK_VERSION}.zip && \
 	mkdir -p /elasticsearch/plugins/ik/ && \
 	unzip elasticsearch-analysis-ik-${ES_IK_VERSION}.zip -d /elasticsearch/plugins/ik/ && \
 	rm -f elasticsearch-analysis-ik-${ES_IK_VERSION}.zip
