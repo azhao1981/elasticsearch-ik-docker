@@ -14,7 +14,8 @@ ENV ES_IK_VERSION 1.9.2
 
 RUN curl -O https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v${ES_IK_VERSION}/elasticsearch-analysis-ik-${ES_IK_VERSION}.zip && \
 	mkdir -p /elasticsearch/plugins/ik/ && \
-	unzip elasticsearch-analysis-ik-${ES_IK_VERSION}.zip -d /elasticsearch/plugins/ik/
+	unzip elasticsearch-analysis-ik-${ES_IK_VERSION}.zip -d /elasticsearch/plugins/ik/ && \
+	rm -f elasticsearch-analysis-ik-${ES_IK_VERSION}.zip
 
 RUN mkdir -p /elasticsearch/plugins/ik/ &&
 	useradd elasticsearch && \
