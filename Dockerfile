@@ -17,7 +17,7 @@ RUN curl -o elasticsearch-analysis-ik-${ES_IK_VERSION}.zip -L -e  '; auto' https
 	unzip elasticsearch-analysis-ik-${ES_IK_VERSION}.zip -d /elasticsearch/plugins/ik/ && \
 	rm -f elasticsearch-analysis-ik-${ES_IK_VERSION}.zip
 
-RUN mkdir -p /elasticsearch/plugins/ik/ &&
+RUN mkdir -p /elasticsearch/plugins/ik/ && \
 	useradd elasticsearch && \
 	chown -R elasticsearch:elasticsearch /elasticsearch
 
