@@ -4,11 +4,15 @@
 
 ```shell
 
-$ docker pull registry.cn-hangzhou.aliyuncs.com/nodesolar/elasticsearch-ik-docker
+docker pull registry.cn-hangzhou.aliyuncs.com/nodesolar/elasticsearch-ik-docker
 
-$ docker run -d -v "$PWD/config":/elasticsearch/config nodesolar/elasticsearch-ik-docker
+docker run -d \
+-v "$PWD/config":/elasticsearch/config \
+-v "$PWD/data":/elasticsearch/data \
+-v "$PWD/logs":/elasticsearch/logs \
+registry.cn-hangzhou.aliyuncs.com/nodesolar/elasticsearch-ik-docker:latest
 
-$ docker run -d -v "$PWD/data":/elasticsearch/data nodesolar/elasticsearch-ik-docker
+## try: ip: 192.168.99.100
 
-$ docker run -d -v "$PWD/logs":/elasticsearch/logs nodesolar/elasticsearch-ik-docker
+
 ```
